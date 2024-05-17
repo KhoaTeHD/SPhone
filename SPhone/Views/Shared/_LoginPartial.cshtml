@@ -1,8 +1,9 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@using SPhone.Areas.Identity.Data
+@using SPhone.Models;
 
-@inject SignInManager<SPhoneUser> SignInManager
-@inject UserManager<SPhoneUser> UserManager
+
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
 
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))

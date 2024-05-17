@@ -1,14 +1,16 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using SPhone.Areas.Identity.Data;
-using SPhone.Data;
+using SPhone.Models;
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("SPhoneContextConnection") ?? throw new InvalidOperationException("Connection string 'SPhoneContextConnection' not found.");
 
 builder.Services.AddDbContext<SPhoneContext>(options =>
     options.UseSqlServer(connectionString));
 
-builder.Services.AddDefaultIdentity<SPhoneUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<User>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = true;
+})
     .AddEntityFrameworkStores<SPhoneContext>();
 
 // Add services to the container.

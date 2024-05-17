@@ -9,8 +9,17 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Category\" />
+    <Folder Include="Areas\Admin\Views\Attribute\" />
+    <Folder Include="Areas\Admin\Views\Review\" />
+    <Folder Include="Areas\Identity\Data\" />
     <Folder Include="Data\" />
+    <Folder Include="Migrations\" />
     <Folder Include="Responsitory\" />
+    <Folder Include="Views\Account\" />
+    <Folder Include="Views\Checkout\" />
+    <Folder Include="Views\Order\" />
+    <Folder Include="Views\Product\" />
   </ItemGroup>
 
   <ItemGroup>

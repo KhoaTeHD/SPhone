@@ -18,23 +18,23 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
-using SPhone.Areas.Identity.Data;
+using SPhone.Models;
 
 namespace SPhone.Areas.Identity.Pages.Account
 {
     public class RegisterModel : PageModel
     {
-        private readonly SignInManager<SPhoneUser> _signInManager;
-        private readonly UserManager<SPhoneUser> _userManager;
-        private readonly IUserStore<SPhoneUser> _userStore;
-        private readonly IUserEmailStore<SPhoneUser> _emailStore;
+        private readonly SignInManager<User> _signInManager;
+        private readonly UserManager<User> _userManager;
+        private readonly IUserStore<User> _userStore;
+        private readonly IUserEmailStore<User> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
         public RegisterModel(
-            UserManager<SPhoneUser> userManager,
-            IUserStore<SPhoneUser> userStore,
-            SignInManager<SPhoneUser> signInManager,
+            UserManager<User> userManager,
+            IUserStore<User> userStore,
+            SignInManager<User> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender)
         {
@@ -155,27 +155,27 @@ namespace SPhone.Areas.Identity.Pages.Account
             return Page();
         }
 
-        private SPhoneUser CreateUser()
+        private User CreateUser()
         {
             try
             {
-                return Activator.CreateInstance<SPhoneUser>();
+                return Activator.CreateInstance<User>();
             }
             catch
             {
-                throw new InvalidOperationException($"Can't create an instance of '{nameof(SPhoneUser)}'. " +
-                    $"Ensure that '{nameof(SPhoneUser)}' is not an abstract class and has a parameterless constructor, or alternatively " +
+                throw new InvalidOperationException($"Can't create an instance of '{nameof(User)}'. " +
+                    $"Ensure that '{nameof(User)}' is not an abstract class and has a parameterless constructor, or alternatively " +
                     $"override the register page in /Areas/Identity/Pages/Account/Register.cshtml");
             }
         }
 
-        private IUserEmailStore<SPhoneUser> GetEmailStore()
+        private IUserEmailStore<User> GetEmailStore()
         {
             if (!_userManager.SupportsUserEmail)
             {
                 throw new NotSupportedException("The default UI requires a user store with email support.");
             }
-            return (IUserEmailStore<SPhoneUser>)_userStore;
+            return (IUserEmailStore<User>)_userStore;
         }
     }
 }
