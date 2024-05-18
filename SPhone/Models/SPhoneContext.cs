@@ -26,17 +26,36 @@ namespace SPhone.Models
         public virtual DbSet<VariationOption> VariationOptions { get; set; } = null!;
         public virtual DbSet<Voucher> Vouchers { get; set; } = null!;
 
+        public SPhoneContext()
+        {
+        }
+
         public SPhoneContext(DbContextOptions<SPhoneContext> options)
         : base(options)
         {
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseLazyLoadingProxies();
+            optionsBuilder.UseSqlServer("Server=DangKhoa;Database=SPhone;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True;");
+        }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            // Customize the ASP.NET Identity model and override the defaults if needed.
-            // For example, you can rename the ASP.NET Identity table names and more.
-            // Add your customizations after calling base.OnModelCreating(builder);
+
+            builder.Entity<ProductVariation>()
+                .HasMany(x => x.Options)
+                .WithMany(y => y.ProductVariations)
+                .UsingEntity(j => j.ToTable("ProductVariationOption"));
+
+            builder.Entity<ProductVariation>()
+                .HasMany(x => x.SpecOptions)
+                .WithMany(y => y.ProductVariations)
+                .UsingEntity(j => j.ToTable("ProductVariation_Spec_Option"));
+
             builder.Entity<OrderLine>().HasKey(x => new {x.OrderId, x.ProductVariationId});
 
             foreach (var entityType in builder.Model.GetEntityTypes())

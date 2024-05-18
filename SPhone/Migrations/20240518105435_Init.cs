@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SPhone.Migrations
 {
-    public partial class InitDatabase : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Categories",
+                name: "Category",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -21,16 +21,16 @@ namespace SPhone.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Categories", x => x.Id);
+                    table.PrimaryKey("PK_Category", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Categories_Categories_ParentId",
+                        name: "FK_Category_Category_ParentId",
                         column: x => x.ParentId,
-                        principalTable: "Categories",
+                        principalTable: "Category",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "Payments",
+                name: "Payment",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -40,7 +40,7 @@ namespace SPhone.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Payments", x => x.Id);
+                    table.PrimaryKey("PK_Payment", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -59,7 +59,7 @@ namespace SPhone.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Specifications",
+                name: "Specification",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -69,7 +69,7 @@ namespace SPhone.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Specifications", x => x.Id);
+                    table.PrimaryKey("PK_Specification", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -99,7 +99,7 @@ namespace SPhone.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Variations",
+                name: "Variation",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -109,11 +109,11 @@ namespace SPhone.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Variations", x => x.Id);
+                    table.PrimaryKey("PK_Variation", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Vouchers",
+                name: "Voucher",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
@@ -124,11 +124,11 @@ namespace SPhone.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Vouchers", x => x.Id);
+                    table.PrimaryKey("PK_Voucher", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Products",
+                name: "Product",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -141,11 +141,11 @@ namespace SPhone.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Products", x => x.Id);
+                    table.PrimaryKey("PK_Product", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Products_Categories_CategoryId",
+                        name: "FK_Product_Category_CategoryId",
                         column: x => x.CategoryId,
-                        principalTable: "Categories",
+                        principalTable: "Category",
                         principalColumn: "Id");
                 });
 
@@ -171,7 +171,7 @@ namespace SPhone.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SpecificationOptions",
+                name: "SpecificationOption",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -181,16 +181,16 @@ namespace SPhone.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SpecificationOptions", x => x.Id);
+                    table.PrimaryKey("PK_SpecificationOption", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SpecificationOptions_Specifications_SpecId",
+                        name: "FK_SpecificationOption_Specification_SpecId",
                         column: x => x.SpecId,
-                        principalTable: "Specifications",
+                        principalTable: "Specification",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "DeliveryAddresses",
+                name: "DeliveryAddress",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -206,16 +206,16 @@ namespace SPhone.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DeliveryAddresses", x => x.Id);
+                    table.PrimaryKey("PK_DeliveryAddress", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_DeliveryAddresses_Users_UserId",
+                        name: "FK_DeliveryAddress_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "Notifications",
+                name: "Notification",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
@@ -226,16 +226,16 @@ namespace SPhone.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Notifications", x => x.Id);
+                    table.PrimaryKey("PK_Notification", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Notifications_Users_UserId",
+                        name: "FK_Notification_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "Trackers",
+                name: "Tracker",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -246,9 +246,9 @@ namespace SPhone.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Trackers", x => x.Id);
+                    table.PrimaryKey("PK_Tracker", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Trackers_Users_UserId",
+                        name: "FK_Tracker_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id");
@@ -340,7 +340,7 @@ namespace SPhone.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "VariationOptions",
+                name: "VariationOption",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -350,21 +350,22 @@ namespace SPhone.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_VariationOptions", x => x.Id);
+                    table.PrimaryKey("PK_VariationOption", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_VariationOptions_Variations_VariationId",
+                        name: "FK_VariationOption_Variation_VariationId",
                         column: x => x.VariationId,
-                        principalTable: "Variations",
+                        principalTable: "Variation",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "ProductVariations",
+                name: "ProductVariation",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ProductId = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Qty = table.Column<int>(type: "int", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Price = table.Column<decimal>(type: "money", nullable: false),
@@ -373,17 +374,17 @@ namespace SPhone.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProductVariations", x => x.Id);
+                    table.PrimaryKey("PK_ProductVariation", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ProductVariations_Products_ProductId",
+                        name: "FK_ProductVariation_Product_ProductId",
                         column: x => x.ProductId,
-                        principalTable: "Products",
+                        principalTable: "Product",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Orders",
+                name: "Order",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -399,26 +400,26 @@ namespace SPhone.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Orders", x => x.Id);
+                    table.PrimaryKey("PK_Order", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Orders_DeliveryAddresses_DeliveryAddressId",
+                        name: "FK_Order_DeliveryAddress_DeliveryAddressId",
                         column: x => x.DeliveryAddressId,
-                        principalTable: "DeliveryAddresses",
+                        principalTable: "DeliveryAddress",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Orders_Payments_PaymentId",
+                        name: "FK_Order_Payment_PaymentId",
                         column: x => x.PaymentId,
-                        principalTable: "Payments",
+                        principalTable: "Payment",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Orders_Vouchers_VoucherId",
+                        name: "FK_Order_Voucher_VoucherId",
                         column: x => x.VoucherId,
-                        principalTable: "Vouchers",
+                        principalTable: "Voucher",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "CartItems",
+                name: "Cart_Item",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
@@ -428,21 +429,21 @@ namespace SPhone.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CartItems", x => x.Id);
+                    table.PrimaryKey("PK_Cart_Item", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CartItems_ProductVariations_ProductVariationId",
+                        name: "FK_Cart_Item_ProductVariation_ProductVariationId",
                         column: x => x.ProductVariationId,
-                        principalTable: "ProductVariations",
+                        principalTable: "ProductVariation",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_CartItems_Users_UserId",
+                        name: "FK_Cart_Item_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "ProductVariationSpecificationOption",
+                name: "ProductVariation_Spec_Option",
                 columns: table => new
                 {
                     ProductVariationsId = table.Column<int>(type: "int", nullable: false),
@@ -450,47 +451,23 @@ namespace SPhone.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProductVariationSpecificationOption", x => new { x.ProductVariationsId, x.SpecOptionsId });
+                    table.PrimaryKey("PK_ProductVariation_Spec_Option", x => new { x.ProductVariationsId, x.SpecOptionsId });
                     table.ForeignKey(
-                        name: "FK_ProductVariationSpecificationOption_ProductVariations_ProductVariationsId",
+                        name: "FK_ProductVariation_Spec_Option_ProductVariation_ProductVariationsId",
                         column: x => x.ProductVariationsId,
-                        principalTable: "ProductVariations",
+                        principalTable: "ProductVariation",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ProductVariationSpecificationOption_SpecificationOptions_SpecOptionsId",
+                        name: "FK_ProductVariation_Spec_Option_SpecificationOption_SpecOptionsId",
                         column: x => x.SpecOptionsId,
-                        principalTable: "SpecificationOptions",
+                        principalTable: "SpecificationOption",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ProductVariationUser",
-                columns: table => new
-                {
-                    ProductVariationsId = table.Column<int>(type: "int", nullable: false),
-                    UsersId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProductVariationUser", x => new { x.ProductVariationsId, x.UsersId });
-                    table.ForeignKey(
-                        name: "FK_ProductVariationUser_ProductVariations_ProductVariationsId",
-                        column: x => x.ProductVariationsId,
-                        principalTable: "ProductVariations",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ProductVariationUser_Users_UsersId",
-                        column: x => x.UsersId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ProductVariationVariationOption",
+                name: "ProductVariationOption",
                 columns: table => new
                 {
                     OptionsId = table.Column<int>(type: "int", nullable: false),
@@ -498,23 +475,23 @@ namespace SPhone.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProductVariationVariationOption", x => new { x.OptionsId, x.ProductVariationsId });
+                    table.PrimaryKey("PK_ProductVariationOption", x => new { x.OptionsId, x.ProductVariationsId });
                     table.ForeignKey(
-                        name: "FK_ProductVariationVariationOption_ProductVariations_ProductVariationsId",
+                        name: "FK_ProductVariationOption_ProductVariation_ProductVariationsId",
                         column: x => x.ProductVariationsId,
-                        principalTable: "ProductVariations",
+                        principalTable: "ProductVariation",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ProductVariationVariationOption_VariationOptions_OptionsId",
+                        name: "FK_ProductVariationOption_VariationOption_OptionsId",
                         column: x => x.OptionsId,
-                        principalTable: "VariationOptions",
+                        principalTable: "VariationOption",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Reviews",
+                name: "Review",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -527,21 +504,21 @@ namespace SPhone.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Reviews", x => x.Id);
+                    table.PrimaryKey("PK_Review", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Reviews_ProductVariations_ProductVariationId",
+                        name: "FK_Review_ProductVariation_ProductVariationId",
                         column: x => x.ProductVariationId,
-                        principalTable: "ProductVariations",
+                        principalTable: "ProductVariation",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Reviews_Users_UserId",
+                        name: "FK_Review_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "OrderLines",
+                name: "OrderLine",
                 columns: table => new
                 {
                     OrderId = table.Column<int>(type: "int", nullable: false),
@@ -553,99 +530,94 @@ namespace SPhone.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OrderLines", x => new { x.OrderId, x.ProductVariationId });
+                    table.PrimaryKey("PK_OrderLine", x => new { x.OrderId, x.ProductVariationId });
                     table.ForeignKey(
-                        name: "FK_OrderLines_Orders_OrderId",
+                        name: "FK_OrderLine_Order_OrderId",
                         column: x => x.OrderId,
-                        principalTable: "Orders",
+                        principalTable: "Order",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_OrderLines_ProductVariations_ProductVariationId",
+                        name: "FK_OrderLine_ProductVariation_ProductVariationId",
                         column: x => x.ProductVariationId,
-                        principalTable: "ProductVariations",
+                        principalTable: "ProductVariation",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CartItems_ProductVariationId",
-                table: "CartItems",
+                name: "IX_Cart_Item_ProductVariationId",
+                table: "Cart_Item",
                 column: "ProductVariationId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CartItems_UserId",
-                table: "CartItems",
+                name: "IX_Cart_Item_UserId",
+                table: "Cart_Item",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Categories_ParentId",
-                table: "Categories",
+                name: "IX_Category_ParentId",
+                table: "Category",
                 column: "ParentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_DeliveryAddresses_UserId",
-                table: "DeliveryAddresses",
+                name: "IX_DeliveryAddress_UserId",
+                table: "DeliveryAddress",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Notifications_UserId",
-                table: "Notifications",
+                name: "IX_Notification_UserId",
+                table: "Notification",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderLines_ProductVariationId",
-                table: "OrderLines",
-                column: "ProductVariationId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Orders_DeliveryAddressId",
-                table: "Orders",
+                name: "IX_Order_DeliveryAddressId",
+                table: "Order",
                 column: "DeliveryAddressId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Orders_PaymentId",
-                table: "Orders",
+                name: "IX_Order_PaymentId",
+                table: "Order",
                 column: "PaymentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Orders_VoucherId",
-                table: "Orders",
+                name: "IX_Order_VoucherId",
+                table: "Order",
                 column: "VoucherId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Products_CategoryId",
-                table: "Products",
-                column: "CategoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ProductVariations_ProductId",
-                table: "ProductVariations",
-                column: "ProductId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ProductVariationSpecificationOption_SpecOptionsId",
-                table: "ProductVariationSpecificationOption",
-                column: "SpecOptionsId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ProductVariationUser_UsersId",
-                table: "ProductVariationUser",
-                column: "UsersId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ProductVariationVariationOption_ProductVariationsId",
-                table: "ProductVariationVariationOption",
-                column: "ProductVariationsId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Reviews_ProductVariationId",
-                table: "Reviews",
+                name: "IX_OrderLine_ProductVariationId",
+                table: "OrderLine",
                 column: "ProductVariationId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Reviews_UserId",
-                table: "Reviews",
+                name: "IX_Product_CategoryId",
+                table: "Product",
+                column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductVariation_ProductId",
+                table: "ProductVariation",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductVariation_Spec_Option_SpecOptionsId",
+                table: "ProductVariation_Spec_Option",
+                column: "SpecOptionsId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductVariationOption_ProductVariationsId",
+                table: "ProductVariationOption",
+                column: "ProductVariationsId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Review_ProductVariationId",
+                table: "Review",
+                column: "ProductVariationId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Review_UserId",
+                table: "Review",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
@@ -661,13 +633,13 @@ namespace SPhone.Migrations
                 filter: "[NormalizedName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SpecificationOptions_SpecId",
-                table: "SpecificationOptions",
+                name: "IX_SpecificationOption_SpecId",
+                table: "SpecificationOption",
                 column: "SpecId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Trackers_UserId",
-                table: "Trackers",
+                name: "IX_Tracker_UserId",
+                table: "Tracker",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
@@ -698,39 +670,36 @@ namespace SPhone.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_VariationOptions_VariationId",
-                table: "VariationOptions",
+                name: "IX_VariationOption_VariationId",
+                table: "VariationOption",
                 column: "VariationId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CartItems");
+                name: "Cart_Item");
 
             migrationBuilder.DropTable(
-                name: "Notifications");
+                name: "Notification");
 
             migrationBuilder.DropTable(
-                name: "OrderLines");
+                name: "OrderLine");
 
             migrationBuilder.DropTable(
-                name: "ProductVariationSpecificationOption");
+                name: "ProductVariation_Spec_Option");
 
             migrationBuilder.DropTable(
-                name: "ProductVariationUser");
+                name: "ProductVariationOption");
 
             migrationBuilder.DropTable(
-                name: "ProductVariationVariationOption");
-
-            migrationBuilder.DropTable(
-                name: "Reviews");
+                name: "Review");
 
             migrationBuilder.DropTable(
                 name: "RoleClaims");
 
             migrationBuilder.DropTable(
-                name: "Trackers");
+                name: "Tracker");
 
             migrationBuilder.DropTable(
                 name: "UserClaims");
@@ -745,43 +714,43 @@ namespace SPhone.Migrations
                 name: "UserTokens");
 
             migrationBuilder.DropTable(
-                name: "Orders");
+                name: "Order");
 
             migrationBuilder.DropTable(
-                name: "SpecificationOptions");
+                name: "SpecificationOption");
 
             migrationBuilder.DropTable(
-                name: "VariationOptions");
+                name: "VariationOption");
 
             migrationBuilder.DropTable(
-                name: "ProductVariations");
+                name: "ProductVariation");
 
             migrationBuilder.DropTable(
                 name: "Roles");
 
             migrationBuilder.DropTable(
-                name: "DeliveryAddresses");
+                name: "DeliveryAddress");
 
             migrationBuilder.DropTable(
-                name: "Payments");
+                name: "Payment");
 
             migrationBuilder.DropTable(
-                name: "Vouchers");
+                name: "Voucher");
 
             migrationBuilder.DropTable(
-                name: "Specifications");
+                name: "Specification");
 
             migrationBuilder.DropTable(
-                name: "Variations");
+                name: "Variation");
 
             migrationBuilder.DropTable(
-                name: "Products");
+                name: "Product");
 
             migrationBuilder.DropTable(
                 name: "Users");
 
             migrationBuilder.DropTable(
-                name: "Categories");
+                name: "Category");
         }
     }
 }

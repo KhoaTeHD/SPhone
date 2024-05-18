@@ -1,0 +1,51 @@
+﻿@using SPhone.Models;
+@model List<Variation>;
+
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Attribute</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+        <div class="d-flex justify-content-end mb-3">
+            <div class="btn btn-success">Thêm thuộc tính</div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                Attribute Table
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên thuộc tính</th>
+                            <th>Hoạt động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            foreach(Variation v in Model)
+                            {
+                                <tr>
+                                    <td>@v.Id</td>
+                                    <td>@v.Name</td>
+                                    <td>@((v.IsActive == true)? "Hoạt động" : "Đã ẩn")</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên</th>
+                            <th>Cha</th>
+                            <th>Hoạt động</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>

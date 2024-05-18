@@ -9,8 +9,6 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\Category\" />
-    <Folder Include="Areas\Admin\Views\Attribute\" />
     <Folder Include="Areas\Admin\Views\Review\" />
     <Folder Include="Areas\Identity\Data\" />
     <Folder Include="Data\" />
@@ -25,6 +23,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.29" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.29" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="6.0.29" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.29" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.29">
       <PrivateAssets>all</PrivateAssets>

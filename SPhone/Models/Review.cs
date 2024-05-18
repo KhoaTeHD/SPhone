@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SPhone.Models
 {
-    public partial class Review
+    [Table("Review")]
+    public class Review
     {
+        [Key]
         public int Id { get; set; }
         public int? ProductVariationId { get; set; }
         public int? UserId { get; set; }

@@ -6,10 +6,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SPhone.Models
 {
-    public partial class OrderLine
+    [Table("OrderLine")]
+    public class OrderLine
     {
         [Key, Column(Order = 0)]
         public int OrderId { get; set; }
+
         [Key, Column(Order = 1)]
         public int ProductVariationId { get; set; }
         public int? Quanty { get; set; }

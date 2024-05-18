@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SPhone.Models
 {
-    public partial class DeliveryAddress
+    [Table("DeliveryAddress")]
+    public class DeliveryAddress
     {
-        public DeliveryAddress()
-        {
-            Orders = new HashSet<Order>();
-        }
-
+        [Key]
         public int Id { get; set; }
         public string? PhoneNumber { get; set; }
         public string? Province { get; set; }

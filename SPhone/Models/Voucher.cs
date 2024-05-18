@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SPhone.Models
 {
-    public partial class Voucher
+    [Table("Voucher")]
+    public class Voucher
     {
-        public Voucher()
-        {
-            Orders = new HashSet<Order>();
-        }
-
+        [Key]
         public string Id { get; set; } = null!;
         public int? Value { get; set; }
         public bool? Unit { get; set; }

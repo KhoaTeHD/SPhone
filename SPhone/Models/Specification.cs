@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SPhone.Models
 {
-    public partial class Specification
+    [Table("Specification")]
+    public class Specification
     {
-        public Specification()
-        {
-            SpecificationOptions = new HashSet<SpecificationOption>();
-        }
 
+        [Key]
         public int Id { get; set; }
         public string? Name { get; set; }
         public bool? IsActive { get; set; }
