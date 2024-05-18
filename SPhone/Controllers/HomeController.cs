@@ -23,6 +23,24 @@ namespace SPhone.Controllers
             return View();
         }
 
+        [Route("cart")]
+        public IActionResult Cart()
+        {
+            return View();
+        }
+
+        [Route("lovedproduct")]
+        public IActionResult LovedProduct()
+        {
+            return View();
+        }
+
+        [Route("phoneshop")]
+        public IActionResult PhoneShop()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

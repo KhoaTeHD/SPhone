@@ -1,0 +1,502 @@
+﻿@{
+    ViewData["Title"] = "Loved Product";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<!-- Breadcrumb: Begin -->
+<div class="container my-2 d-none d-lg-block">
+    <nav aria-label="breadcrumb" style="font-size: 14px;">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Yêu thích</li>
+        </ol>
+    </nav>
+</div>
+<!-- Breadcrumb: End -->
+<!-- Phones: Begin -->
+<section class="container mt-4">
+    <div class="row">
+        <div class="d-none d-lg-block col-lg-3 filter-love-products">
+            <div class="d-flex flex-column mb-3">
+                <p class="fw-bold mb-3" style="opacity: 0.9;">Danh mục</p>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" checked type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Tất cả
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Điện thoại
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Tablet
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Laptop
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Phụ kiện
+                    </label>
+                </div>
+            </div>
+
+            <div class="d-flex flex-column mb-3">
+                <p class="fw-bold mb-3" style="opacity: 0.9;">Trạng thái</p>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" checked type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Tất cả
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Còn hàng
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Hết hàng
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-lg-none my-4">
+            <button class="btn btn-white product-filter btn-filter-small-device" style="border: 1px solid #ccc; border-radius: 0px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar-love-product-filter">
+                <i class="fa-solid fa-filter"></i>
+                Lọc
+            </button>
+        </div>
+        <div class="col-md-12 col-lg-9">
+            <div class="row">
+                <div class="col-8 col-md-6 d-flex align-items-center btn-group-edit-love-products">
+                    <button class="btn btn-primary btn-edit">Chỉnh sửa</button>
+                    <button class="btn px-4 ms-5 btn-remove-love-cancel d-none" style="background-color: #ccc;">Hủy</button>
+                    <button class="btn px-3 ms-3 btn-remove-love d-none" style="background-color: #e0915c;">Bỏ thích</button>
+                </div>
+                <div class="col-4 col-md-6">
+                    <div class="input-group justify-content-end arrange-filter">
+                        <button class="btn btn-outline-secondary dropdown-toggle btn-arrange-love-product"
+                                style="border-radius: 0px;" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                            Sắp xếp theo
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Thứ tự mặc định</a></li>
+                            <li><a class="dropdown-item" href="#">Mới nhất</a></li>
+                            <li><a class="dropdown-item" href="#">Thứ tự từ A - Z</a></li>
+                            <li><a class="dropdown-item" href="#">Thứ tự từ Z - A</a></li>
+                            <li><a class="dropdown-item" href="#">Giá từ cao đến thấp</a></li>
+                            <li><a class="dropdown-item" href="#">Giá từ thấp đến cao</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-12 mt-4">
+                    <div class="row">
+                        <div class="col-6 col-sm-6 col-md-4 col-lg-4 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-link">
+                                        <div class="card-link-img">
+                                            <img src="../img/index/category/dienthoai.webp" alt="Card image"
+                                                 style="width:100%">
+                                            <div class="d-flex flex-column">
+                                                <a href="#" class="text-decoration-none">
+                                                    <p style="background-color: #0d6efd; color: #fff; text-align: center; padding: 8px;"
+                                                       class="m-0 view-detail-link">
+                                                        Xem Chi Tiết
+                                                    </p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <p class="mt-3 card-name" style="font-weight: 600; color: #0d6efd;">
+                                                Samsung Galaxy S24 Ultra 5G
+                                            </p>
+                                            <p class="card-price" style="font-weight: 600; font-size: 14px;">
+                                                23.990.000₫ – 35.990.000₫
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-end d-none check-edit-love">
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" style="font-size: 20px; border-radius: 0px;" type="checkbox" value="" id="flexCheckDefault">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-4 col-lg-4 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-link">
+                                        <div class="card-link-img">
+                                            <img src="../img/index/category/dienthoai.webp" alt="Card image"
+                                                 style="width:100%">
+                                            <div class="d-flex flex-column">
+                                                <a href="#" class="text-decoration-none">
+                                                    <p style="background-color: #0d6efd; color: #fff; text-align: center; padding: 8px;"
+                                                       class="m-0 view-detail-link">
+                                                        Xem Chi Tiết
+                                                    </p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <p class="mt-3 card-name" style="font-weight: 600; color: #0d6efd;">
+                                                Samsung Galaxy S24 Ultra 5G
+                                            </p>
+                                            <p class="card-price" style="font-weight: 600; font-size: 14px;">
+                                                23.990.000₫ – 35.990.000₫
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-end d-none check-edit-love">
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" style="font-size: 20px; border-radius: 0px;" type="checkbox" value="" id="flexCheckDefault">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-4 col-lg-4 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-link">
+                                        <div class="card-link-img">
+                                            <img src="../img/index/category/dienthoai.webp" alt="Card image"
+                                                 style="width:100%">
+                                            <div class="d-flex flex-column">
+                                                <a href="#" class="text-decoration-none">
+                                                    <p style="background-color: #0d6efd; color: #fff; text-align: center; padding: 8px;"
+                                                       class="m-0 view-detail-link">
+                                                        Xem Chi Tiết
+                                                    </p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <p class="mt-3 card-name" style="font-weight: 600; color: #0d6efd;">
+                                                Samsung Galaxy S24 Ultra 5G
+                                            </p>
+                                            <p class="card-price" style="font-weight: 600; font-size: 14px;">
+                                                23.990.000₫ – 35.990.000₫
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-end d-none check-edit-love">
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" style="font-size: 20px; border-radius: 0px;" type="checkbox" value="" id="flexCheckDefault">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-4 col-lg-4 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-link">
+                                        <div class="card-link-img">
+                                            <img src="../img/index/category/dienthoai.webp" alt="Card image"
+                                                 style="width:100%">
+                                            <div class="d-flex flex-column">
+                                                <a href="#" class="text-decoration-none">
+                                                    <p style="background-color: #0d6efd; color: #fff; text-align: center; padding: 8px;"
+                                                       class="m-0 view-detail-link">
+                                                        Xem Chi Tiết
+                                                    </p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <p class="mt-3 card-name" style="font-weight: 600; color: #0d6efd;">
+                                                Samsung Galaxy S24 Ultra 5G
+                                            </p>
+                                            <p class="card-price" style="font-weight: 600; font-size: 14px;">
+                                                23.990.000₫ – 35.990.000₫
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-end d-none check-edit-love">
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" style="font-size: 20px; border-radius: 0px;" type="checkbox" value="" id="flexCheckDefault">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-4 col-lg-4 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-link">
+                                        <div class="card-link-img">
+                                            <img src="../img/index/category/dienthoai.webp" alt="Card image"
+                                                 style="width:100%">
+                                            <div class="d-flex flex-column">
+                                                <a href="#" class="text-decoration-none">
+                                                    <p style="background-color: #0d6efd; color: #fff; text-align: center; padding: 8px;"
+                                                       class="m-0 view-detail-link">
+                                                        Xem Chi Tiết
+                                                    </p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <p class="mt-3 card-name" style="font-weight: 600; color: #0d6efd;">
+                                                Samsung Galaxy S24 Ultra 5G
+                                            </p>
+                                            <p class="card-price" style="font-weight: 600; font-size: 14px;">
+                                                23.990.000₫ – 35.990.000₫
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-end d-none check-edit-love">
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" style="font-size: 20px; border-radius: 0px;" type="checkbox" value="" id="flexCheckDefault">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-4 col-lg-4 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-link">
+                                        <div class="card-link-img">
+                                            <img src="../img/index/category/dienthoai.webp" alt="Card image"
+                                                 style="width:100%">
+                                            <div class="d-flex flex-column">
+                                                <a href="#" class="text-decoration-none">
+                                                    <p style="background-color: #0d6efd; color: #fff; text-align: center; padding: 8px;"
+                                                       class="m-0 view-detail-link">
+                                                        Xem Chi Tiết
+                                                    </p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <p class="mt-3 card-name" style="font-weight: 600; color: #0d6efd;">
+                                                Samsung Galaxy S24 Ultra 5G
+                                            </p>
+                                            <p class="card-price" style="font-weight: 600; font-size: 14px;">
+                                                23.990.000₫ – 35.990.000₫
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-end d-none check-edit-love">
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" style="font-size: 20px; border-radius: 0px;" type="checkbox" value="" id="flexCheckDefault">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-4 col-lg-4 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-link">
+                                        <div class="card-link-img">
+                                            <img src="../img/index/category/dienthoai.webp" alt="Card image"
+                                                 style="width:100%">
+                                            <div class="d-flex flex-column">
+                                                <a href="#" class="text-decoration-none">
+                                                    <p style="background-color: #0d6efd; color: #fff; text-align: center; padding: 8px;"
+                                                       class="m-0 view-detail-link">
+                                                        Xem Chi Tiết
+                                                    </p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <p class="mt-3 card-name" style="font-weight: 600; color: #0d6efd;">
+                                                Samsung Galaxy S24 Ultra 5G
+                                            </p>
+                                            <p class="card-price" style="font-weight: 600; font-size: 14px;">
+                                                23.990.000₫ – 35.990.000₫
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-end d-none check-edit-love">
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" style="font-size: 20px; border-radius: 0px;" type="checkbox" value="" id="flexCheckDefault">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-4 col-lg-4 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-link">
+                                        <div class="card-link-img">
+                                            <img src="../img/index/category/dienthoai.webp" alt="Card image"
+                                                 style="width:100%">
+                                            <div class="d-flex flex-column">
+                                                <a href="#" class="text-decoration-none">
+                                                    <p style="background-color: #0d6efd; color: #fff; text-align: center; padding: 8px;"
+                                                       class="m-0 view-detail-link">
+                                                        Xem Chi Tiết
+                                                    </p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <p class="mt-3 card-name" style="font-weight: 600; color: #0d6efd;">
+                                                Samsung Galaxy S24 Ultra 5G
+                                            </p>
+                                            <p class="card-price" style="font-weight: 600; font-size: 14px;">
+                                                23.990.000₫ – 35.990.000₫
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-end d-none check-edit-love">
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" style="font-size: 20px; border-radius: 0px;" type="checkbox" value="" id="flexCheckDefault">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-4 col-lg-4 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-link">
+                                        <div class="card-link-img">
+                                            <img src="../img/index/category/dienthoai.webp" alt="Card image"
+                                                 style="width:100%">
+                                            <div class="d-flex flex-column">
+                                                <a href="#" class="text-decoration-none">
+                                                    <p style="background-color: #0d6efd; color: #fff; text-align: center; padding: 8px;"
+                                                       class="m-0 view-detail-link">
+                                                        Xem Chi Tiết
+                                                    </p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <p class="mt-3 card-name" style="font-weight: 600; color: #0d6efd;">
+                                                Samsung Galaxy S24 Ultra 5G
+                                            </p>
+                                            <p class="card-price" style="font-weight: 600; font-size: 14px;">
+                                                23.990.000₫ – 35.990.000₫
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-end d-none check-edit-love">
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" style="font-size: 20px; border-radius: 0px;" type="checkbox" value="" id="flexCheckDefault">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="d-flex justify-content-center mb-4">
+                        <button class="btn btn-white d-flex align-items-center" style="border: 1px solid #ccc; border-radius: 0px; font-size: 16px;" type="button">
+                            <span>Xem thêm</span>
+                            <i class="fa-solid fa-sort-down ms-1"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-start" id="sidebar-love-product-filter">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Lọc</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body p-4">
+            <div class="d-flex flex-column mb-3">
+                <p class="fw-bold mb-3" style="opacity: 0.9;">Danh mục</p>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" checked type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Tất cả
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Điện thoại
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Tablet
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Laptop
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Phụ kiện
+                    </label>
+                </div>
+            </div>
+
+            <div class="d-flex flex-column mb-3">
+                <p class="fw-bold mb-3" style="opacity: 0.9;">Trạng thái</p>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" checked type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Tất cả
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Còn hàng
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Hết hàng
+                    </label>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-6">
+                    <button class="btn btn-light" style="width: 100%;">Thiết lập lại</button>
+                </div>
+
+                <div class="col-6">
+                    <button class="btn btn-primary" style="width: 100%;">Áp dụng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Phones: End -->

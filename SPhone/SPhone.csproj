@@ -20,6 +20,8 @@
     <Folder Include="Views\Checkout\" />
     <Folder Include="Views\Order\" />
     <Folder Include="Views\Product\" />
+    <Folder Include="wwwroot\img\" />
+    <Folder Include="wwwroot\font\" />
   </ItemGroup>
 
   <ItemGroup>

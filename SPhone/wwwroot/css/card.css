@@ -1,0 +1,18 @@
+.card-link-img {
+    position: relative;
+}
+
+.card-link-img > div {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    animation: quick-view-animation .2s ease-in forwards;
+    transform-origin: bottom center;
+    display: none !important;
+}
+
+.card-body:hover .card-link-img > div {
+    cursor: pointer;
+    display: block !important;
+}

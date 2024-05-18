@@ -1,0 +1,14 @@
+
+#common-slider > button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+
+#common-slider {
+    position: relative;
+}

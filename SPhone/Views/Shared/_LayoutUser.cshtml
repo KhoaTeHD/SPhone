@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../font/fontawesome-free-6.5.2-web/css/all.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/sliders.css">
+    <link rel="stylesheet" href="../assets/css/cart.css">
+    <link rel="stylesheet" href="../css/card.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <title>Trang chủ</title>
+</head>
+
+<!-- Analysis -->
+<!-- 
+    1. Header
+        1.1. Header top
+            1.1.1. Letf
+                a. Email liên hệ
+                b. Slogan
+            1.1.2. Right: login
+        1.2. Header middle
+            1.2.1. Logo
+            1.2.2. Navigation
+            1.2.3. Loved Products, Cart and Analysis Total
+        1.3. Header bottom
+            1.3.1. Category dropdown
+            1.3.2. Search section
+            1.3.3. Contact Phone
+    2. Body
+        2.1. Slider
+        2.2. Category list
+        2.3. Featured Products
+        2.4. Video demo product
+    3. Footer
+ -->
+
+<body>
+    <!-- Header -->
+    <!-- Header Top: Begin -->
+    <section class="container-fluid d-none d-md-block" style="background-color: #f5f5f5;">
+        <div class="container">
+            <div class="header-top d-flex justify-content-between align-items-center px-0 py-2">
+                <div class="d-flex">
+                    <p class="m-0">
+                        <i class="fa-solid fa-envelope me-2"></i>
+                        <span>SPhone2864@gmail.com</span>
+                    </p>
+                    <span class="border-end mx-2 d-none d-lg-block"></span>
+                    <p class="m-0 d-none d-lg-block">Chọn chúng tôi - chọn trải nghiệm hoàn hảo!</p>
+                </div>
+                <a href="#" class="d-flex align-items-center text-decoration-none text-dark header-top-account-link">
+                    <i class="fa-solid fa-user me-2"></i>
+                    <span>Đăng nhập/Đăng ký</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Header Top: End -->
+
+    <!-- Header Mid: Begin -->
+    <div class="sticky-top">
+        <section class="container py-3">
+            <div class="row">
+                <div class="col-sm-12 col-md-10 col-lg-11 m-auto">
+                    <nav class="navbar navbar-expand-sm navbar-light">
+                        <div class="container-fluid px-0">
+                            <a class="navbar-brand" href="javascript:void(0)">SPhoneLogo</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#mynavbar">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="mynavbar">
+                                <ul class="navbar-nav m-auto header-mid-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="javascript:void(0)">Trang chủ</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="javascript:void(0)">Cửa hàng</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="javascript:void(0)">Giới thiệu</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="javascript:void(0)">Liên hệ</a>
+                                    </li>
+                                    <li class="nav-item d-md-none">
+                                        <a class="nav-link" href="javascript:void(0)">Tài khoản</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-sm-12 col-md-2 col-lg-1 my-auto">
+                    <div class="d-flex justify-content-end header-mid-cart">
+                        <a href="#" class="header-middle-link-icon text-decoration-none text-dark me-4">
+                            <i class="fa-solid fa-heart"></i>
+                            <span>1</span>
+                        </a>
+                        <a href="#" class="header-middle-link-icon text-decoration-none text-dark">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>3</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Header Mid: End -->
+
+        <!-- Header Bottom: Begin -->
+        <section class="container">
+            <div class="row align-items-center">
+                <div class="col-sm-12 col-md-12 col-lg-3 header-bottom-category">
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa-solid fa-list"></i>
+                            Danh Mục Sản Phẩm
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Điện Thoại</a></li>
+                            <li><a class="dropdown-item" href="#">Tablet</a></li>
+                            <li><a class="dropdown-item" href="#">Laptop</a></li>
+                            <li><a class="dropdown-item" href="#">Phụ kiện</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-8 col-lg-6 header-bottom-search">
+                    <form class="d-flex">
+                        <select class="form-select">
+                            <option>Tất cả</option>
+                            <option>Điện Thoại</option>
+                            <option>Tablet</option>
+                            <option>Laptop</option>
+                            <option>Phụ kiện</option>
+                        </select>
+                        <input class="form-control" type="text" placeholder="Search">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-3 header-bottom-contact">
+                    <div class="d-flex justify-content-end align-items-center header-bottom-contact-content">
+                        <div class="header-bottom-phone me-4">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="d-flex flex-column header-bottom-phone-info">
+                            <p class="me-1">+84 907.604.514</p>
+                            <p class="m-0">support 24/7 time</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Header Bottom: End -->
+    </div>
+
+    @RenderBody();
+
+    <!-- Footer: Begin -->
+    <section class="container-fluid" style="background-color: #ccc;">
+        <div class="container py-3" style="text-align: center; font-size: 14px;">
+            © 2018. Công ty cổ phần Thế Giới Di Động. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày 02/01/2007. GPMXH: 238/GP-BTTTT do Bộ Thông Tin và Truyền Thông cấp ngày 04/06/2020.
+            <br>
+            Địa chỉ: 128 Trần Quang Khải, P.Tân Định, Q.1, TP.Hồ Chí Minh. Địa chỉ liên hệ và gửi chứng từ: Lô T2-1.2, Đường D1, Đ. D1, P.Tân Phú, TP.Thủ Đức, TP.Hồ Chí Minh. Điện thoại: 028 38125960. Email: cskh@thegioididong.com. Chịu trách nhiệm nội dung: Huỳnh Văn Tốt. Email: Tot.huynhvan@thegioididong.com.
+        </div>
+    </section>
+    <!-- Footer: End -->
+
+    <!-- JS import -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+
+        var hearts = document.querySelectorAll(".card-heart");
+        hearts.forEach(heart => {
+            heart.addEventListener("mouseenter", function() {
+                heart.classList.add("rotate-360-animation");
+                heart.classList.remove("fa-regular");
+                heart.classList.add("fa-solid");
+            });
+
+            heart.addEventListener("mouseleave", function() {
+                heart.classList.add("fa-regular");
+                heart.classList.remove("fa-solid");
+                heart.classList.remove("rotate-360-animation");
+            });
+        });
+    </script>
+
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+
+        var btnEdit = document.querySelector(".btn-edit");
+        var btnRemoveLove = document.querySelector(".btn-remove-love");
+        var btnCancelRemoveLove = document.querySelector(".btn-remove-love-cancel");
+        var checkEditLoves = document.querySelectorAll(".check-edit-love");
+        var cardLinks = document.querySelectorAll(".card-link");
+        var btnArrangeLoveProduct = document.querySelector(".btn-arrange-love-product");
+        var ckFilterLoveProducts = document.querySelectorAll(".filter-love-products input");
+        var btnFilterSmallDevice = document.querySelector(".btn-filter-small-device");
+
+        btnEdit.addEventListener("click", function () {
+            btnRemoveLove.classList.remove("d-none");
+            btnCancelRemoveLove.classList.remove("d-none");
+            checkEditLoves.forEach(element => {
+                element.classList.remove("d-none");
+            });
+            btnArrangeLoveProduct.disabled = true;
+            ckFilterLoveProducts.forEach(element => {
+                element.disabled = true;
+            });
+            cardLinks.forEach(element => {
+                element.classList.add("no-hover");
+            });
+            btnFilterSmallDevice.disabled = true;
+        });
+
+        btnCancelRemoveLove.addEventListener("click", function () {
+            btnRemoveLove.classList.add("d-none");
+            btnCancelRemoveLove.classList.add("d-none");
+            checkEditLoves.forEach(element => {
+                element.classList.add("d-none");
+            });
+            btnArrangeLoveProduct.disabled = false;
+            ckFilterLoveProducts.forEach(element => {
+                element.disabled = false;
+            });
+            cardLinks.forEach(element => {
+                element.classList.remove("no-hover");
+            });
+            btnFilterSmallDevice.disabled = false;
+        });
+    </script>
+</body>
+
+</html>
+

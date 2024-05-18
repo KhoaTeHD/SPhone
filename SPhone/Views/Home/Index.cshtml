@@ -1,8 +1,501 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!-- Category list: Start -->
+<section class="container mt-5">
+    <div class="row">
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card card-category" style="height: 100%;">
+                <div class="card-body">
+                    <a href="#" class="text-decoration-none text-dark">
+                        <div class="d-flex flex-column align-items-center py-4">
+                            <img src="../img/index/category/dienthoai.webp" alt="Điện thoại"
+                                 style="width:60%">
+                            <span class="mt-2" style="font-weight: 600;">Điện thoại</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card card-category" style="height: 100%;">
+                <div class="card-body">
+                    <a href="#" class="text-decoration-none text-dark">
+                        <div class="d-flex flex-column align-items-center py-4">
+                            <img src="../img/index/category/tablet.webp" alt="Tablet" style="width:60%">
+                            <span class="mt-2" style="font-weight: 600;">Tablet</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card card-category" style="height: 100%;">
+                <div class="card-body">
+                    <a href="#" class="text-decoration-none text-dark">
+                        <div class="d-flex flex-column align-items-center py-4">
+                            <img src="../img/index/category/laptop.jpg" alt="Laptop" style="width:60%">
+                            <span class="mt-2" style="font-weight: 600;">Laptop</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card card-category" style="height: 100%;">
+                <div class="card-body">
+                    <a href="#" class="text-decoration-none text-dark">
+                        <div class="d-flex flex-column align-items-center py-4">
+                            <img src="../img/index/category/tainghe.jpg" alt="Phụ kiện" style="width:60%">
+                            <span class="mt-2" style="font-weight: 600;">Phụ kiện</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Category list: End -->
+<!-- Featured Products: Begin -->
+<section class="container mt-2">
+    <div class="d-flex flex-column align-items-center">
+        <p class="h4">Sản phẩm nổi bật</p>
+        <span class="border-bottom mt-2"
+              style="width: 8%; border: 2px solid #0d6efd !important; border-radius: 4px;"></span>
+        <!-- Nav pills -->
+        <ul class="nav nav-pills mt-4 custom-nav-pills-featured-products">
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="pill" href="#tabAll">Tất cả</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#tabPhone">Điện thoại</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#tabTablet">Tablet</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#tabLaptop">Laptop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#tabAccessory">Phụ kiện</a>
+            </li>
+        </ul>
+
+        <div class="tab-content mt-4">
+            <div class="tab-pane container active" id="tabAll">
+                <div class="row">
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-link">
+                                    <div class="card-link-img">
+                                        <img src="../img/index/category/dienthoai.webp" alt="Card image"
+                                             style="width:100%">
+                                        <div class="d-flex flex-column">
+                                            <div class="">
+                                                <a href="#" class="text-decoration-none text-dark">
+                                                    <i class="fa-regular fa-heart card-heart"
+                                                       style="font-size: 24px; color: #0d6efd;"
+                                                       data-bs-toggle="tooltip" data-bs-placement="left"
+                                                       title="Thêm vào yêu thích!"></i>
+                                                </a>
+                                            </div>
+                                            <a href="#" class="text-decoration-none">
+                                                <p style="background-color: #0d6efd; color: #fff; text-align: center; padding: 8px;"
+                                                   class="m-0 view-detail-link">
+                                                    Xem Chi Tiết
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <p class="mt-3 card-name" style="font-weight: 600; color: #0d6efd;">
+                                            Samsung Galaxy S24 Ultra 5G
+                                        </p>
+                                        <p class="card-price" style="font-weight: 600; font-size: 14px;">
+                                            23.990.000₫ – 35.990.000₫
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-link">
+                                    <div class="card-link-img">
+                                        <img src="../img/index/category/dienthoai.webp" alt="Card image"
+                                             style="width:100%">
+                                        <div class="d-flex flex-column">
+                                            <div class="">
+                                                <a href="#" class="text-decoration-none text-dark">
+                                                    <i class="fa-regular fa-heart card-heart"
+                                                       style="font-size: 24px; color: #0d6efd;"
+                                                       data-bs-toggle="tooltip" data-bs-placement="left"
+                                                       title="Thêm vào yêu thích!"></i>
+                                                </a>
+                                            </div>
+                                            <a href="#" class="text-decoration-none">
+                                                <p style="background-color: #0d6efd; color: #fff; text-align: center; padding: 8px;"
+                                                   class="m-0 view-detail-link">
+                                                    Xem Chi Tiết
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <p class="mt-3 card-name" style="font-weight: 600; color: #0d6efd;">
+                                            Samsung Galaxy S24 Ultra 5G
+                                        </p>
+                                        <p class="card-price" style="font-weight: 600; font-size: 14px;">
+                                            23.990.000₫ – 35.990.000₫
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-link">
+                                    <div class="card-link-img">
+                                        <img src="../img/index/category/dienthoai.webp" alt="Card image"
+                                             style="width:100%">
+                                        <div class="d-flex flex-column">
+                                            <div class="">
+                                                <a href="#" class="text-decoration-none text-dark">
+                                                    <i class="fa-regular fa-heart card-heart"
+                                                       style="font-size: 24px; color: #0d6efd;"
+                                                       data-bs-toggle="tooltip" data-bs-placement="left"
+                                                       title="Thêm vào yêu thích!"></i>
+                                                </a>
+                                            </div>
+                                            <a href="#" class="text-decoration-none">
+                                                <p style="background-color: #0d6efd; color: #fff; text-align: center; padding: 8px;"
+                                                   class="m-0 view-detail-link">
+                                                    Xem Chi Tiết
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <p class="mt-3 card-name" style="font-weight: 600; color: #0d6efd;">
+                                            Samsung Galaxy S24 Ultra 5G
+                                        </p>
+                                        <p class="card-price" style="font-weight: 600; font-size: 14px;">
+                                            23.990.000₫ – 35.990.000₫
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-link">
+                                    <div class="card-link-img">
+                                        <img src="../img/index/category/dienthoai.webp" alt="Card image"
+                                             style="width:100%">
+                                        <div class="d-flex flex-column">
+                                            <div class="">
+                                                <a href="#" class="text-decoration-none text-dark">
+                                                    <i class="fa-regular fa-heart card-heart"
+                                                       style="font-size: 24px; color: #0d6efd;"
+                                                       data-bs-toggle="tooltip" data-bs-placement="left"
+                                                       title="Thêm vào yêu thích!"></i>
+                                                </a>
+                                            </div>
+                                            <a href="#" class="text-decoration-none">
+                                                <p style="background-color: #0d6efd; color: #fff; text-align: center; padding: 8px;"
+                                                   class="m-0 view-detail-link">
+                                                    Xem Chi Tiết
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <p class="mt-3 card-name" style="font-weight: 600; color: #0d6efd;">
+                                            Samsung Galaxy S24 Ultra 5G
+                                        </p>
+                                        <p class="card-price" style="font-weight: 600; font-size: 14px;">
+                                            23.990.000₫ – 35.990.000₫
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-link">
+                                    <div class="card-link-img">
+                                        <img src="../img/index/category/dienthoai.webp" alt="Card image"
+                                             style="width:100%">
+                                        <div class="d-flex flex-column">
+                                            <div class="">
+                                                <a href="#" class="text-decoration-none text-dark">
+                                                    <i class="fa-regular fa-heart card-heart"
+                                                       style="font-size: 24px; color: #0d6efd;"
+                                                       data-bs-toggle="tooltip" data-bs-placement="left"
+                                                       title="Thêm vào yêu thích!"></i>
+                                                </a>
+                                            </div>
+                                            <a href="#" class="text-decoration-none">
+                                                <p style="background-color: #0d6efd; color: #fff; text-align: center; padding: 8px;"
+                                                   class="m-0 view-detail-link">
+                                                    Xem Chi Tiết
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <p class="mt-3 card-name" style="font-weight: 600; color: #0d6efd;">
+                                            Samsung Galaxy S24 Ultra 5G
+                                        </p>
+                                        <p class="card-price" style="font-weight: 600; font-size: 14px;">
+                                            23.990.000₫ – 35.990.000₫
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-link">
+                                    <div class="card-link-img">
+                                        <img src="../img/index/category/dienthoai.webp" alt="Card image"
+                                             style="width:100%">
+                                        <div class="d-flex flex-column">
+                                            <div class="">
+                                                <a href="#" class="text-decoration-none text-dark">
+                                                    <i class="fa-regular fa-heart card-heart"
+                                                       style="font-size: 24px; color: #0d6efd;"
+                                                       data-bs-toggle="tooltip" data-bs-placement="left"
+                                                       title="Thêm vào yêu thích!"></i>
+                                                </a>
+                                            </div>
+                                            <a href="#" class="text-decoration-none">
+                                                <p style="background-color: #0d6efd; color: #fff; text-align: center; padding: 8px;"
+                                                   class="m-0 view-detail-link">
+                                                    Xem Chi Tiết
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <p class="mt-3 card-name" style="font-weight: 600; color: #0d6efd;">
+                                            Samsung Galaxy S24 Ultra 5G
+                                        </p>
+                                        <p class="card-price" style="font-weight: 600; font-size: 14px;">
+                                            23.990.000₫ – 35.990.000₫
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-link">
+                                    <div class="card-link-img">
+                                        <img src="../img/index/category/dienthoai.webp" alt="Card image"
+                                             style="width:100%">
+                                        <div class="d-flex flex-column">
+                                            <div class="">
+                                                <a href="#" class="text-decoration-none text-dark">
+                                                    <i class="fa-regular fa-heart card-heart"
+                                                       style="font-size: 24px; color: #0d6efd;"
+                                                       data-bs-toggle="tooltip" data-bs-placement="left"
+                                                       title="Thêm vào yêu thích!"></i>
+                                                </a>
+                                            </div>
+                                            <a href="#" class="text-decoration-none">
+                                                <p style="background-color: #0d6efd; color: #fff; text-align: center; padding: 8px;"
+                                                   class="m-0 view-detail-link">
+                                                    Xem Chi Tiết
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <p class="mt-3 card-name" style="font-weight: 600; color: #0d6efd;">
+                                            Samsung Galaxy S24 Ultra 5G
+                                        </p>
+                                        <p class="card-price" style="font-weight: 600; font-size: 14px;">
+                                            23.990.000₫ – 35.990.000₫
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-link">
+                                    <div class="card-link-img">
+                                        <img src="../img/index/category/dienthoai.webp" alt="Card image"
+                                             style="width:100%">
+                                        <div class="d-flex flex-column">
+                                            <div class="">
+                                                <a href="#" class="text-decoration-none text-dark">
+                                                    <i class="fa-regular fa-heart card-heart"
+                                                       style="font-size: 24px; color: #0d6efd;"
+                                                       data-bs-toggle="tooltip" data-bs-placement="left"
+                                                       title="Thêm vào yêu thích!"></i>
+                                                </a>
+                                            </div>
+                                            <a href="#" class="text-decoration-none">
+                                                <p style="background-color: #0d6efd; color: #fff; text-align: center; padding: 8px;"
+                                                   class="m-0 view-detail-link">
+                                                    Xem Chi Tiết
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <p class="mt-3 card-name" style="font-weight: 600; color: #0d6efd;">
+                                            Samsung Galaxy S24 Ultra 5G
+                                        </p>
+                                        <p class="card-price" style="font-weight: 600; font-size: 14px;">
+                                            23.990.000₫ – 35.990.000₫
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-link">
+                                    <div class="card-link-img">
+                                        <img src="../img/index/category/dienthoai.webp" alt="Card image"
+                                             style="width:100%">
+                                        <div class="d-flex flex-column">
+                                            <div class="">
+                                                <a href="#" class="text-decoration-none text-dark">
+                                                    <i class="fa-regular fa-heart card-heart"
+                                                       style="font-size: 24px; color: #0d6efd;"
+                                                       data-bs-toggle="tooltip" data-bs-placement="left"
+                                                       title="Thêm vào yêu thích!"></i>
+                                                </a>
+                                            </div>
+                                            <a href="#" class="text-decoration-none">
+                                                <p style="background-color: #0d6efd; color: #fff; text-align: center; padding: 8px;"
+                                                   class="m-0 view-detail-link">
+                                                    Xem Chi Tiết
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <p class="mt-3 card-name" style="font-weight: 600; color: #0d6efd;">
+                                            Samsung Galaxy S24 Ultra 5G
+                                        </p>
+                                        <p class="card-price" style="font-weight: 600; font-size: 14px;">
+                                            23.990.000₫ – 35.990.000₫
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-link">
+                                    <div class="card-link-img">
+                                        <img src="../img/index/category/dienthoai.webp" alt="Card image"
+                                             style="width:100%">
+                                        <div class="d-flex flex-column">
+                                            <div class="">
+                                                <a href="#" class="text-decoration-none text-dark">
+                                                    <i class="fa-regular fa-heart card-heart"
+                                                       style="font-size: 24px; color: #0d6efd;"
+                                                       data-bs-toggle="tooltip" data-bs-placement="left"
+                                                       title="Thêm vào yêu thích!"></i>
+                                                </a>
+                                            </div>
+                                            <a href="#" class="text-decoration-none">
+                                                <p style="background-color: #0d6efd; color: #fff; text-align: center; padding: 8px;"
+                                                   class="m-0 view-detail-link">
+                                                    Xem Chi Tiết
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <p class="mt-3 card-name" style="font-weight: 600; color: #0d6efd;">
+                                            Samsung Galaxy S24 Ultra 5G
+                                        </p>
+                                        <p class="card-price" style="font-weight: 600; font-size: 14px;">
+                                            23.990.000₫ – 35.990.000₫
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Featured Products: End -->
+<!-- Review Products: Begin -->
+<section class="container mt-2 mb-5">
+    <div class="d-flex flex-column align-items-center">
+        <p class="h4">Review Sản Phẩm Hot</p>
+        <span class="border-bottom mt-2"
+              style="width: 8%; border: 2px solid #0d6efd !important; border-radius: 4px;"></span>
+        <div class="row mt-5">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 mb-4">
+                <div class="radio">
+                    <iframe width="100%" src="https://www.youtube.com/embed/1Zdel7QapDg"></iframe>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 mb-4">
+                <div class="radio">
+                    <iframe width="100%" src="https://www.youtube.com/embed/9ROeIuDOh4A"></iframe>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 mb-4">
+                <div class="radio">
+                    <iframe width="100%" src="https://www.youtube.com/embed/qYOzFYcsFeU"></iframe>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 mb-4">
+                <div class="radio">
+                    <iframe width="100%" src="https://www.youtube.com/embed/UYXz1j0RUWQ"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Review Products: End -->

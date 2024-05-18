@@ -1,0 +1,4 @@
+.card-category:hover {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    opacity: 0.7;
+}

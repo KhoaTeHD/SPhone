@@ -1,0 +1,278 @@
+/* Header */
+.header-top {
+    font-size: 14px;
+}
+
+.header-top-account-link {
+    opacity: 0.8;
+}
+
+.header-top-account-link:hover {
+    opacity: 1;
+}
+
+.sticky-top {
+    position: sticky;
+    background-color: #fff;
+    top: 0;
+}
+
+.header-middle-link-icon {
+    position: relative;
+}
+
+.header-middle-link-icon span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -4px;
+    right: -7px;
+    font-size: 12px;
+    width: 12px;
+    height: 12px;
+    background-color: #0d6efd;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 600;
+}
+
+.header-mid-cart a {
+    opacity: 0.8;
+}
+
+.header-mid-cart a:hover {
+    opacity: 1;
+}
+
+.header-mid-nav li a {
+    color: #000 !important;
+    opacity: 0.8;
+}
+
+.header-mid-nav li:hover a {
+    opacity: 1;
+}
+
+.header-bottom-category button {
+    width: 80%;
+    padding: 8px;
+    border-radius: 0px;
+}
+
+.header-bottom-category ul {
+    border-radius: 0px;
+    width: 80%;
+}
+
+.header-bottom-search select{
+    width: 30%;
+    border-radius: 0px;
+}
+
+.header-bottom-search input {
+    padding: 8px;
+    border-radius: 0px;
+}
+
+.header-bottom-search button {
+    width: 15%;
+    border-radius: 0px;
+}
+
+.header-bottom-phone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    color: #0d6efd;
+    background-color: #ccc;
+}
+
+.header-bottom-phone-info p:first-child {
+    font-weight: 600;
+}
+
+.header-bottom-phone-info p:last-child{
+    font-size: 14px;
+}
+
+.rotate-360-animation {
+    animation: rotate-360-animation .3s linear forwards;
+}
+
+.no-hover {
+    pointer-events: none; /* Loại bỏ hover */
+}
+
+.no-event {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+}
+/* Responsive and keyframe */
+
+/* DT */
+@media (max-width: 767px) {
+    .header-mid-cart {
+        margin-top: 10px;
+        justify-content: center !important;
+    }
+
+    .header-bottom-category button {
+        margin-top: 10px;
+        width: 100%;
+        text-align: start;
+    }
+    
+    .header-bottom-search {
+        margin-top: 24px;
+    }
+
+    .header-bottom-contact {
+        margin-top: 20px;
+    }
+
+    .header-bottom-search select{
+        width: 55%;
+        border-radius: 0px;
+    }
+
+    .header-bottom-contact-content {
+        justify-content: start !important;
+    }
+
+    .sticky-top {
+        position: relative;
+    }
+
+    .banner-for-mobile {
+        display: block !important;
+    }
+
+    .custom-nav-pills-featured-products li a{
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .card-name {
+        font-size: 12px;
+    }
+
+    .card-price {
+        font-size: 9px !important;
+    }
+
+    .heading-product {
+        font-size: 14px;
+    }
+
+    .arrange-filter button, .arrange-filter a, .product-filter {
+        font-size: 12px;
+    }
+
+    .view-detail-link {
+        font-size: 12px;
+        padding: 4px;
+    }
+
+    .card-heart {
+        font-size: 16px !important;
+    }
+
+    .btn-group-edit-love-products > button {
+        margin: 0 !important;
+        font-size: 12px;
+        padding: 4px 6px;
+    }
+
+    .btn-group-edit-love-products > button:nth-child(2),
+    .btn-group-edit-love-products > button:last-child {
+        margin-left: 6px !important;
+    }
+
+    /* Cart UI */
+
+    .total-cart-title {
+        margin-top: 28px;
+    }
+
+    .container-cart {
+        box-shadow: none !important;
+    }
+
+    .remove-cart-item {
+        position: absolute;
+        top: 7px;
+        left: 10px;
+    }
+
+    .btn-update-cart {
+        margin-top: 28px;
+    }
+
+    .price-text-responsive {
+        display: block !important;
+    }
+
+    .img-cart-item {
+        width: 120px !important;
+    }
+
+    .input-group {
+        width: 80px !important;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 992px){
+    .header-bottom-category button {
+        width: 100%;
+        text-align: start;
+    }
+    
+    .header-bottom-category ul {
+        width: 100%;
+        border-radius: 0px;
+    }
+
+    .header-bottom-search,
+    .header-bottom-contact {
+        margin-top: 24px;
+    }
+
+    .total-cart-title {
+        margin-top: 28px;
+    }
+}
+
+/* PC */
+@media (min-width: 993px) {
+    .header-mid-nav li {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@keyframes quick-view-animation {
+    0% {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+@keyframes rotate-360-animation {
+    0% {
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(360deg);
+    }
+}
