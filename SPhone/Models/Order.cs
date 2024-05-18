@@ -1,17 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SPhone.Models
 {
-    public partial class Order
+    [Table("Order")]
+    public class Order
     {
-        public Order()
-        {
-            OrderLines = new HashSet<OrderLine>();
-        }
 
+        [Key]
         public int Id { get; set; }
         public int? PaymentId { get; set; }
         public string? VoucherId { get; set; }

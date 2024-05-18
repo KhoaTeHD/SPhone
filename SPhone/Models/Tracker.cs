@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SPhone.Models
 {
-    public partial class Tracker
+    [Table("Tracker")]
+    public class Tracker
     {
+        [Key]
         public int Id { get; set; }
         public int? UserId { get; set; }
         public string? Action { get; set; }

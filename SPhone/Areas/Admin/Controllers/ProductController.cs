@@ -1,16 +1,19 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SPhone.Models;
 
 namespace SPhone.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class ProductController : Controller
     {
-
+        private SPhoneContext _context = new SPhoneContext();
 
         // GET: HomeController
         public ActionResult Index()
         {
+            List<ProductVariation> products = _context.ProductVariations.ToList();
+
             return View();
         }
 

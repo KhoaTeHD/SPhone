@@ -8,8 +8,8 @@ builder.Services.AddDbContext<SPhoneContext>(options =>
     options.UseSqlServer(connectionString));
 
 builder.Services.AddDefaultIdentity<User>(options =>
-{
-    options.SignIn.RequireConfirmedAccount = true;
+{   
+    options.SignIn.RequireConfirmedAccount = false;
 })
     .AddEntityFrameworkStores<SPhoneContext>();
 

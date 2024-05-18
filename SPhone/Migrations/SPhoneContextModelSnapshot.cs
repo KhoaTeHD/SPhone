@@ -141,22 +141,7 @@ namespace SPhone.Migrations
 
                     b.HasIndex("SpecOptionsId");
 
-                    b.ToTable("ProductVariationSpecificationOption");
-                });
-
-            modelBuilder.Entity("ProductVariationUser", b =>
-                {
-                    b.Property<int>("ProductVariationsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UsersId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ProductVariationsId", "UsersId");
-
-                    b.HasIndex("UsersId");
-
-                    b.ToTable("ProductVariationUser");
+                    b.ToTable("ProductVariation_Spec_Option", (string)null);
                 });
 
             modelBuilder.Entity("ProductVariationVariationOption", b =>
@@ -171,7 +156,7 @@ namespace SPhone.Migrations
 
                     b.HasIndex("ProductVariationsId");
 
-                    b.ToTable("ProductVariationVariationOption");
+                    b.ToTable("ProductVariationOption", (string)null);
                 });
 
             modelBuilder.Entity("SPhone.Models.CartItem", b =>
@@ -194,7 +179,7 @@ namespace SPhone.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("CartItems");
+                    b.ToTable("Cart_Item");
                 });
 
             modelBuilder.Entity("SPhone.Models.Category", b =>
@@ -218,7 +203,7 @@ namespace SPhone.Migrations
 
                     b.HasIndex("ParentId");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Category");
                 });
 
             modelBuilder.Entity("SPhone.Models.DeliveryAddress", b =>
@@ -257,7 +242,7 @@ namespace SPhone.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("DeliveryAddresses");
+                    b.ToTable("DeliveryAddress");
                 });
 
             modelBuilder.Entity("SPhone.Models.Notification", b =>
@@ -281,7 +266,7 @@ namespace SPhone.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Notifications");
+                    b.ToTable("Notification");
                 });
 
             modelBuilder.Entity("SPhone.Models.Order", b =>
@@ -324,7 +309,7 @@ namespace SPhone.Migrations
 
                     b.HasIndex("VoucherId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Order");
                 });
 
             modelBuilder.Entity("SPhone.Models.OrderLine", b =>
@@ -353,7 +338,7 @@ namespace SPhone.Migrations
 
                     b.HasIndex("ProductVariationId");
 
-                    b.ToTable("OrderLines");
+                    b.ToTable("OrderLine");
                 });
 
             modelBuilder.Entity("SPhone.Models.Payment", b =>
@@ -372,7 +357,7 @@ namespace SPhone.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Payments");
+                    b.ToTable("Payment");
                 });
 
             modelBuilder.Entity("SPhone.Models.Product", b =>
@@ -404,7 +389,7 @@ namespace SPhone.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("SPhone.Models.ProductVariation", b =>
@@ -424,6 +409,10 @@ namespace SPhone.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("money");
 
@@ -437,7 +426,7 @@ namespace SPhone.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductVariations");
+                    b.ToTable("ProductVariation");
                 });
 
             modelBuilder.Entity("SPhone.Models.Review", b =>
@@ -469,7 +458,7 @@ namespace SPhone.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Reviews");
+                    b.ToTable("Review");
                 });
 
             modelBuilder.Entity("SPhone.Models.Roles", b =>
@@ -518,7 +507,7 @@ namespace SPhone.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Specifications");
+                    b.ToTable("Specification");
                 });
 
             modelBuilder.Entity("SPhone.Models.SpecificationOption", b =>
@@ -539,7 +528,7 @@ namespace SPhone.Migrations
 
                     b.HasIndex("SpecId");
 
-                    b.ToTable("SpecificationOptions");
+                    b.ToTable("SpecificationOption");
                 });
 
             modelBuilder.Entity("SPhone.Models.Tracker", b =>
@@ -563,7 +552,7 @@ namespace SPhone.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Trackers");
+                    b.ToTable("Tracker");
                 });
 
             modelBuilder.Entity("SPhone.Models.User", b =>
@@ -650,7 +639,7 @@ namespace SPhone.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Variations");
+                    b.ToTable("Variation");
                 });
 
             modelBuilder.Entity("SPhone.Models.VariationOption", b =>
@@ -671,7 +660,7 @@ namespace SPhone.Migrations
 
                     b.HasIndex("VariationId");
 
-                    b.ToTable("VariationOptions");
+                    b.ToTable("VariationOption");
                 });
 
             modelBuilder.Entity("SPhone.Models.Voucher", b =>
@@ -693,7 +682,7 @@ namespace SPhone.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Vouchers");
+                    b.ToTable("Voucher");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -758,21 +747,6 @@ namespace SPhone.Migrations
                     b.HasOne("SPhone.Models.SpecificationOption", null)
                         .WithMany()
                         .HasForeignKey("SpecOptionsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("ProductVariationUser", b =>
-                {
-                    b.HasOne("SPhone.Models.ProductVariation", null)
-                        .WithMany()
-                        .HasForeignKey("ProductVariationsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SPhone.Models.User", null)
-                        .WithMany()
-                        .HasForeignKey("UsersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

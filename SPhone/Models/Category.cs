@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SPhone.Models
 {
-    public partial class Category
+    [Table("Category")]
+    public class Category
     {
-        public Category()
-        {
-            InverseParent = new HashSet<Category>();
-            Products = new HashSet<Product>();
-        }
 
+        [Key]
         public int Id { get; set; }
         public string? Name { get; set; }
         public int? ParentId { get; set; }
