@@ -1,0 +1,186 @@
+﻿@{
+    ViewData["Title"] = "Cart";
+}
+
+<section class="container">
+    <div class="row mt-4">
+        <div class="col-lg-6">
+            <a href="#" class="text-decoration-none">
+                < Mua thêm sản phẩm khác
+            </a>
+        </div>
+        <div class="col-lg-6 d-flex d-none d-md-flex justify-content-end">
+            <span>Giỏ hàng của bạn</span>
+        </div>
+        <div class="col-lg-12 mt-3 mb-5">
+            <div class="row p-4 container-cart" style="border-radius: 4px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); min-height: 50vh;">
+                <div class="col-12 col-sm-12 col-lg-6 flex-grow-1">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row" style="font-weight: 600;">
+                                <div class="col-8 col-sm-8 col-md-5 text-start">
+                                    Sản phẩm
+                                </div>
+                                <div class="col-md-2 d-none d-md-block text-end">
+                                    Giá
+                                </div>
+                                <div class="col-4 col-sm-4 col-md-2 text-end">
+                                    Số lượng
+                                </div>
+                                <div class="col-md-2 d-none d-md-block  text-end">
+                                    Tạm tính
+                                </div>
+                                <div class="col-md-1 d-none d-md-block">
+                                </div>
+                            </div>
+                            <!-- <div class="d-flex my-3" style="height: 1%;">
+                                <p class="border-2 border-bottom" style="width: 92%;"></ơ>
+                            </div> -->
+                            <hr width="100%">
+                            <div class="cart-products">
+                                <div class="row my-3" style="font-size: 14px; position: relative;">
+                                    <div class="col-8 col-sm-8 col-md-5">
+                                        <div class="d-flex">
+                                            <div class="d-flex align-items-center img-cart-item" style="width: 100px;">
+                                                <img src="../img/index/category/dienthoai.webp" alt="product"
+                                                     width="100%">
+                                            </div>
+                                            <div class="d-flex flex-column ms-2">
+                                                <p class="mb-2 fw-bold" style="color: rgba(0, 0, 0, 0.7);">Samsung Galaxy S24 Ultra 5G</p>
+
+                                                <div class="d-flex flex-column" style="color: rgba(0, 0, 0, 0.6);">
+                                                    <p class="mb-0">Màu sắc: đen</p>
+                                                    <p class="mb-0">Ram: 12GB</p>
+                                                    <p class="mb-0">Rom: 256GB</p>
+                                                    <p class="d-none price-text-responsive">1 x <span class="fw-bold" style="color: #000;">100.000.000</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 d-flex d-none d-md-flex  align-items-center">
+                                        <p class="fw-bold mb-0" style="color: rgba(0, 0, 0, 0.7);">100.990.000đ</p>
+                                    </div>
+                                    <div class="col-4 col-sm-4 col-md-2 d-flex align-items-center">
+                                        <div class="input-group">
+                                            <button class="btn btn-outline-secondary d-flex justify-content-center" type="button" style="width: 15px; border: 1px solid #ccc;">-</button>
+                                            <input type="text" class="form-control text-center" aria-label="Quantity" style="font-size: 14px;" value="1">
+                                            <button class="btn btn-outline-secondary d-flex justify-content-center" type="button" style="width: 15px; border: 1px solid #ccc;">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 d-flex d-none d-md-flex align-items-center">
+                                        <p class="fw-bold mb-0" style="color: rgba(0, 0, 0, 0.7);">100.9990.000đ</p>
+                                    </div>
+                                    <div class="col-md-1 d-flex align-items-center justify-content-end">
+                                        <div class="d-flex remove-cart-item justify-content-center align-items-center delete-product-mark" style="background-color: #ccc; width: 20px; height: 20px; border-radius: 50%; opacity: 0.7; cursor: pointer;">
+                                            <i class="fa-solid fa-xmark" style="font-size: 12px;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row my-3" style="font-size: 14px; position: relative;">
+                                    <div class="col-8 col-sm-8 col-md-5">
+                                        <div class="d-flex">
+                                            <div class="d-flex align-items-center img-cart-item" style="width: 100px;">
+                                                <img src="../img/index/category/dienthoai.webp" alt="product"
+                                                     width="100%">
+                                            </div>
+                                            <div class="d-flex flex-column ms-2">
+                                                <p class="mb-2 fw-bold" style="color: rgba(0, 0, 0, 0.7);">Samsung Galaxy S24 Ultra 5G</p>
+
+                                                <div class="d-flex flex-column" style="color: rgba(0, 0, 0, 0.6);">
+                                                    <p class="mb-0">Màu sắc: đen</p>
+                                                    <p class="mb-0">Ram: 12GB</p>
+                                                    <p class="mb-0">Rom: 256GB</p>
+                                                    <p class="d-none price-text-responsive">1 x <span class="fw-bold" style="color: #000;">100.000.000</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 d-flex d-none d-md-flex  align-items-center">
+                                        <p class="fw-bold mb-0" style="color: rgba(0, 0, 0, 0.7);">100.990.000đ</p>
+                                    </div>
+                                    <div class="col-4 col-sm-4 col-md-2 d-flex align-items-center">
+                                        <div class="input-group">
+                                            <button class="btn btn-outline-secondary d-flex justify-content-center" type="button" style="width: 15px; border: 1px solid #ccc;">-</button>
+                                            <input type="text" class="form-control text-center" aria-label="Quantity" style="font-size: 14px;" value="1">
+                                            <button class="btn btn-outline-secondary d-flex justify-content-center" type="button" style="width: 15px; border: 1px solid #ccc;">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 d-flex d-none d-md-flex align-items-center">
+                                        <p class="fw-bold mb-0" style="color: rgba(0, 0, 0, 0.7);">100.9990.000đ</p>
+                                    </div>
+                                    <div class="col-md-1 d-flex align-items-center justify-content-end">
+                                        <div class="d-flex remove-cart-item justify-content-center align-items-center delete-product-mark" style="background-color: #ccc; width: 20px; height: 20px; border-radius: 50%; opacity: 0.7; cursor: pointer;">
+                                            <i class="fa-solid fa-xmark" style="font-size: 12px;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row my-3" style="font-size: 14px; position: relative;">
+                                    <div class="col-8 col-sm-8 col-md-5">
+                                        <div class="d-flex">
+                                            <div class="d-flex align-items-center img-cart-item" style="width: 100px;">
+                                                <img src="../img/index/category/dienthoai.webp" alt="product"
+                                                     width="100%">
+                                            </div>
+                                            <div class="d-flex flex-column ms-2">
+                                                <p class="mb-2 fw-bold" style="color: rgba(0, 0, 0, 0.7);">Samsung Galaxy S24 Ultra 5G</p>
+
+                                                <div class="d-flex flex-column" style="color: rgba(0, 0, 0, 0.6);">
+                                                    <p class="mb-0">Màu sắc: đen</p>
+                                                    <p class="mb-0">Ram: 12GB</p>
+                                                    <p class="mb-0">Rom: 256GB</p>
+                                                    <p class="d-none price-text-responsive">1 x <span class="fw-bold" style="color: #000;">100.000.000</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 d-flex d-none d-md-flex  align-items-center">
+                                        <p class="fw-bold mb-0" style="color: rgba(0, 0, 0, 0.7);">100.990.000đ</p>
+                                    </div>
+                                    <div class="col-4 col-sm-4 col-md-2 d-flex align-items-center">
+                                        <div class="input-group">
+                                            <button class="btn btn-outline-secondary d-flex justify-content-center" type="button" style="width: 15px; border: 1px solid #ccc;">-</button>
+                                            <input type="text" class="form-control text-center" aria-label="Quantity" style="font-size: 14px;" value="1">
+                                            <button class="btn btn-outline-secondary d-flex justify-content-center" type="button" style="width: 15px; border: 1px solid #ccc;">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 d-flex d-none d-md-flex align-items-center">
+                                        <p class="fw-bold mb-0" style="color: rgba(0, 0, 0, 0.7);">100.9990.000đ</p>
+                                    </div>
+                                    <div class="col-md-1 d-flex align-items-center justify-content-end">
+                                        <div class="d-flex remove-cart-item justify-content-center align-items-center delete-product-mark" style="background-color: #ccc; width: 20px; height: 20px; border-radius: 50%; opacity: 0.7; cursor: pointer;">
+                                            <i class="fa-solid fa-xmark" style="font-size: 12px;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 d-flex justify-content-end btn-update-cart">
+                            <button class="btn btn-primary" disabled>Cập nhật giỏ hàng</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1 d-flex d-none d-lg-block align-items-center" style="width: 1%;">
+                    <p class="border-end" style="height: 100%; width: 50%;"></ơ>
+                </div>
+                <div class="col-12 col-sm-12 col-lg-5 d-flex flex-column">
+                    <p class="mb-0 total-cart-title" style="font-weight: 600;">Tổng giỏ hàng</p>
+                    <div class="d-flex my-3" style="height: 1%;">
+                        <p class="border-2 border-bottom" style="width: 100%;"></p>
+                    </div>
+                    <div class="border-end"></div>
+                    <div class="d-flex justify-content-between my-4">
+                        <p>Tạm tính (2 sản phẩm)</p>
+                        <p class="" style="font-weight: 600;">100.9990.000đ</p>
+                    </div>
+
+                    <div class="d-flex mb-5" style="height: 1%;">
+                        <p class="border-2 border-bottom" style="width: 100%;"></p>
+                    </div>
+                    <button class="btn btn-primary">Tiến hành thanh toán</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

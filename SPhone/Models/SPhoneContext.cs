@@ -39,7 +39,8 @@ namespace SPhone.Models
         {
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseLazyLoadingProxies();
-            optionsBuilder.UseSqlServer("Server=DangKhoa;Database=SPhone;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True;");
+            //optionsBuilder.UseSqlServer("Server=DangKhoa;Database=SPhone;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Data Source=HUNGTADASUKE\\MYSUPERASUS;Initial Catalog=SPhone;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
