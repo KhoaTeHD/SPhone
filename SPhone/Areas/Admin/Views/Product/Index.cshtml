@@ -1,5 +1,6 @@
 ﻿@using SPhone.Models;
 @using Microsoft.EntityFrameworkCore;
+@using System.Globalization;
 @model List<ProductVariation>;
 
 <main>
@@ -14,16 +15,16 @@
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                Product Table
+                Bảng sản phẩm
             </div>
             <div class="card-body">
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Name</th>
+                            <th>Tên sản phẩm</th>
                             <th>Tồn kho</th>
-                            <th>Image</th>
+                            <th>Hình ảnh</th>
                             <th>Giá</th>
                             <th>Giá đã giảm</th>
                             <th>Hoạt động</th>
@@ -32,9 +33,9 @@
                     <tfoot>
                         <tr>
                             <th>ID</th>
-                            <th>Name</th>
+                            <th>Tên sản phẩm</th>
                             <th>Tồn kho</th>
-                            <th>Image</th>
+                            <th>Hình ảnh</th>
                             <th>Giá</th>
                             <th>Giá đã giảm</th>
                             <th>Hoạt động</th>
@@ -50,8 +51,8 @@
                                     <th>@c.Name</th>
                                     <th>@c.Qty</th>
                                     <th>@c.Image</th>
-                                    <th>@c.Price</th>
-                                    <th>@c.DiscountedPrice</th>
+                                    <th>@c.Price.ToString("C", new CultureInfo("vi-VN"))</th>
+                                    <th>@c.DiscountedPrice?.ToString("C", new CultureInfo("vi-VN"))</th>
                                     <th>@((c.IsActive == true) ? "Hoạt động " : "Đã ẩn")</th>
                                 </tr>
 

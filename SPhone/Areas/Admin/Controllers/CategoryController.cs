@@ -14,5 +14,26 @@ namespace SPhone.Areas.Admin.Controllers
 
             return View(categories);
         }
+
+        public ActionResult Add() 
+        {
+            
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Category category) 
+        {
+            Console.WriteLine(category.Name);
+            Console.WriteLine(category.ParentId);
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Xoa()
+        {
+            return View();
+        }
+
     }
 }

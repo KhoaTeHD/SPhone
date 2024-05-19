@@ -14,7 +14,7 @@ namespace SPhone.Areas.Admin.Controllers
         {
             List<ProductVariation> products = _context.ProductVariations.ToList();
 
-            return View();
+            return View(products);
         }
 
         public ActionResult Attributes(int id)
