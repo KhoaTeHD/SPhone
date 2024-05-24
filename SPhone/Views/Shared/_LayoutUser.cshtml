@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../assets/css/cart.css">
     <link rel="stylesheet" href="../css/card.css">
     <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="/css/sign-in.css"/>
     <title>Trang chủ</title>
 </head>
 
@@ -54,10 +55,11 @@
                     <span class="border-end mx-2 d-none d-lg-block"></span>
                     <p class="m-0 d-none d-lg-block">Chọn chúng tôi - chọn trải nghiệm hoàn hảo!</p>
                 </div>
-                <a href="#" class="d-flex align-items-center text-decoration-none text-dark header-top-account-link">
+                <partial name="_LoginPartial"></partial>
+                @*<a href="#" class="d-flex align-items-center text-decoration-none text-dark header-top-account-link">
                     <i class="fa-solid fa-user me-2"></i>
                     <span>Đăng nhập/Đăng ký</span>
-                </a>
+                </a>*@
             </div>
         </div>
     </section>
@@ -246,6 +248,8 @@
             btnFilterSmallDevice.disabled = false;
         });
     </script>
+    @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 
 </html>

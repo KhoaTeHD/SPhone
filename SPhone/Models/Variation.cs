@@ -11,9 +11,13 @@ namespace SPhone.Models
 
         [Key]
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "Không được để trống!")]
         public string? Name { get; set; }
+
+        [Required(ErrorMessage = "Chưa đặt trạng thái hoạt động!")]
         public bool? IsActive { get; set; }
 
-        public virtual ICollection<VariationOption> VariationOptions { get; set; }
+        public virtual ICollection<VariationOption>? VariationOptions { get; set; }
     }
 }
