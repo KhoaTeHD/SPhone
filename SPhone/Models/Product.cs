@@ -19,5 +19,7 @@ namespace SPhone.Models
 
         public virtual Category? Category { get; set; }
         public virtual ICollection<ProductVariation> ProductVariations { get; set; }
+    
+        public virtual ICollection<User> Users { get; set; }
     }
 }

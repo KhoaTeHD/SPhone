@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SPhone.Models;
 var builder = WebApplication.CreateBuilder(args);
@@ -23,7 +23,7 @@ builder.Services.AddDefaultIdentity<User>(options =>
     options.Lockout.AllowedForNewUsers = true;
 
     options.User.RequireUniqueEmail = true; //Email là duy nhất
-
+    options.User.AllowedUserNameCharacters = options.User.AllowedUserNameCharacters + "ăâđêôơưĂÂĐÊÔƠƯ";
 })
     .AddEntityFrameworkStores<SPhoneContext>();
 

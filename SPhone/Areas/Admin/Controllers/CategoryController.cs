@@ -70,6 +70,8 @@ namespace SPhone.Areas.Admin.Controllers
         {
             Category category = _Context.Categories.Find(id);
 
+            ViewBag.Categories = _Context.Categories.ToList();
+
             return View(category);
         }
 

@@ -71,6 +71,11 @@ namespace SPhone.Areas.Identity.Pages.Account
         /// </summary>
         public class InputModel
         {
+            [DataType(DataType.Text)]
+            [Required(ErrorMessage = "Không được để trống!")]
+            [Display(Name = "họ và tên")]
+            [StringLength(100, ErrorMessage = "{0} phải tối thiếu từ {2} đến {1} ký tự.", MinimumLength = 3)]
+            public string UserName { get; set; }
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
@@ -115,8 +120,9 @@ namespace SPhone.Areas.Identity.Pages.Account
             {
                 var user = CreateUser();
 
-                await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
+                await _userStore.SetUserNameAsync(user, Input.UserName, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
+
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
                 if (result.Succeeded)

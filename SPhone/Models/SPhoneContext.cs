@@ -57,6 +57,11 @@ namespace SPhone.Models
                 .WithMany(y => y.ProductVariations)
                 .UsingEntity(j => j.ToTable("ProductVariation_Spec_Option"));
 
+            builder.Entity<User>()
+                .HasMany(x => x.LovedProducts)
+                .WithMany(y => y.Users)
+                .UsingEntity(j => j.ToTable("LovedProduct"));
+
             builder.Entity<OrderLine>().HasKey(x => new {x.OrderId, x.ProductVariationId});
 
             foreach (var entityType in builder.Model.GetEntityTypes())
